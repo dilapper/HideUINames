@@ -22,6 +22,18 @@ local CVARS = {
     "UnitNameEnemyTotemName",
     "UnitNameNonCombatCreatureName",
     "UnitNameGuildTitle",
+    -- NPC name tags. Newer clients split NPCs into several settings; any that
+    -- don't exist on this client are skipped.
+    "UnitNameFriendlySpecialNPCName",
+    "UnitNameHostleNPC", -- (sic) Blizzard's spelling
+    "UnitNameInteractiveNPC",
+    "UnitNameEnemyMinorName",
+    -- NPC nameplates (the floating name over mobs and friendly NPCs).
+    "nameplateShowFriendlyNPCs",
+    "nameplateShowEnemies",
+    "nameplateShowEnemyMinions",
+    "nameplateShowEnemyMinus",
+    "nameplateShowFriendlyMinions",
 }
 
 local PREFIX = "|cff33ff99HideUINames|r "
@@ -122,3 +134,18 @@ events:SetScript("OnEvent", (function(handler)
         end
     end
 end)(events:GetScript("OnEvent")))
+
+-- /huin: shows which settings exist on this client and their values, so a
+-- name that still shows can be traced to a missing setting.
+SLASH_HIDEUINAMES1 = "/huin"
+SLASH_HIDEUINAMES2 = "/hideuinames"
+SlashCmdList.HIDEUINAMES = Safe(function()
+    local db = DB()
+    print(PREFIX .. "names currently hidden: " .. tostring(namesHidden))
+    for _, name in ipairs(CVARS) do
+        local current = GetCVarSafe(name)
+        print("  " .. name .. ": "
+            .. (current == nil and "|cffff5555not on this client|r"
+                or ("now=" .. current .. " saved=" .. tostring(db.values[name]))))
+    end
+end)

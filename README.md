@@ -12,4 +12,4 @@ settings are saved before they are switched off).
 Copy the `HideUINames` folder into `World of Warcraft\_forever_\Interface\AddOns\`.
 
 ## Use
-Press Alt+Z. No settings, no commands.
+Press Alt+Z. No settings. `/huin` lists which name settings exist on your client (for troubleshooting).
