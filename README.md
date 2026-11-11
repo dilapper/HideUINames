@@ -9,7 +9,7 @@ Based on the Classic addon FlyCandy, rewritten to be safe on WoW: Forever
 settings are saved before they are switched off).
 
 ## Install
-Copy the `HideUINames` folder into `World of Warcraft\_classic_\Interface\AddOns\`.
+Copy the `HideUINames` folder into `World of Warcraft\_forever_\Interface\AddOns\`.
 
 ## Use
 Press Alt+Z. No settings, no commands.
