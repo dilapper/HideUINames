@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: HideUINames
+## Notes: Hides all unit name tags (players, NPCs, guild, titles, pets, totems) while the UI is hidden (Alt+Z), and restores your own settings when it comes back. For WoW: Forever. Based on FlyCandy.
+## Author: dilapper
+## Version: 1.0
+## SavedVariablesPerCharacter: HideUINamesDB
+## IconTexture: Interface\Icons\INV_Misc_Note_01
+
+HideUINames.lua
